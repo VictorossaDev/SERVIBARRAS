@@ -1,0 +1,9 @@
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\bin\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.deps.json
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\bin\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\bin\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.pdb
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.csprojAssemblyReference.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.AssemblyInfoInputs.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.AssemblyInfo.cs
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.Utilidades\obj\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.pdb

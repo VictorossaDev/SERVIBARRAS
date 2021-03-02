@@ -1,0 +1,14 @@
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.deps.json
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.pdb
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.Models.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.Models.pdb
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\bin\Debug\netcoreapp3.1\SERVIBARRAS.Utilidades.pdb
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.csprojAssemblyReference.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.AssemblyInfoInputs.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.AssemblyInfo.cs
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.csproj.CopyComplete
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.dll
+C:\Users\Victor\Desktop\SERVIBARRAS\SERVIBARRAS\SERVIBARRAS.AccesoDatos\obj\Debug\netcoreapp3.1\SERVIBARRAS.AccesoDatos.pdb
