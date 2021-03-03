@@ -1,0 +1,73 @@
+<!-- Create Ciudad-->
+
+@model SERVIBARRAS.Models.Ciudad
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h3 class="text-center"> Crear Ciudad</h3>
+<form method="post" asp-action="Create" id="formCiudad">
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">    
+        
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="NombreCiudad">Nombre Ciudad</label>
+                </div>
+                <div class="col-8">
+                    <input id="IdNombreCiudad" asp-for="NombreCiudad" class="form-control" type="text" maxlength="300"/>
+                    <span asp-validation-for="NombreCiudad" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    <partial name="_VistaCrearVolver"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+<!-- UTILIDADES -->
+<!-- Acordeon -->
+<!--<button type="button" class="accordionple">Nombre de la seccion</button>
+<div class="panelaccordionple">
+    <br />-->
+<!-- La informacion o los objetos van AQUI -->
+<!--</div>-->
+<!--<br/>-->
+
+<!-- Pone los objetos uno al frente del otro en la misma fila-->
+                @*<div class="form-group row">
+                    
+                </div>*@
+
+<!-- Pone los objetos uno al frente del otro en la misma fila aqui con dos objetos-->
+                @*<div class="form-group row">
+
+                    <div class="col-2">
+                        
+                    </div>
+                    <div class="col-4">
+                       
+                    </div>
+
+                    <div class="col-2">
+                        
+                    </div>
+                    <div class="col-4">
+                       
+                    </div>
+
+                </div>*@
+<!-- --=====================================================-- -->

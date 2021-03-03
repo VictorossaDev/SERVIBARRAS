@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +5,7 @@ using SERVIBARRAS.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AccesoDatos.Data
+namespace SERVIBARRAS.AccesoDatos.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -19,11 +18,19 @@ namespace AccesoDatos.Data
                proyecto de acceso a datos*/
 
           
-        // public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Vendedor> Vendedor { get; set; }
 
-        // public DbSet<Articulo> Articulo { get; set; }
+        public DbSet<TipoGranContribuyente> TipoGranContribuyente { get; set; }
+
+        public DbSet<Ciudad> Ciudad { get; set; }
+
+        public DbSet<Clientes> Clientes { get; set; }
    
-        // public DbSet<Slider> Slider { get; set; }
-        // public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
+
+         public DbSet<Categoria> Categoria { get; set; }
+         public DbSet<Articulo> Articulo { get; set; }
+         public DbSet<Slider> Slider { get; set; }
+         public DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }

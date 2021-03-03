@@ -1,0 +1,154 @@
+<!-- Edit Clientes-->
+
+@model SERVIBARRAS.Models.ViewModels.ClientesVM
+@{
+    ViewData["Title"] = "Editar Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h3 class="text-center"> Editar Clientes</h3>
+<!-- Creo un formulario que buscara el metodo Create del controlador que va por post-->
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Clientes.ClienteId" />
+    <div class="row px-2 mx-2 border">
+       <!-- Vaidacion de campos del formulario, traera los mensajes que se tengan en el modelo-->
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.RazonSocial">Razón Social</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Clientes.RazonSocial" class="form-control" type="text" maxlength="400" />
+                    <span asp-validation-for="Clientes.RazonSocial" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.Nit">Nit Cliente</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Clientes.Nit" class="form-control" type="text" maxlength="200" />
+                    <span asp-validation-for="Clientes.Nit" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.Direccion">Dirección</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Clientes.Direccion" class="form-control" type="text" maxlength="400" />
+                    <span asp-validation-for="Clientes.Direccion" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.FechaIngreso">Fecha de Ingreso</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Clientes.FechaIngreso" class="form-control" type="datetime-local"/>
+                    <span asp-validation-for="Clientes.FechaIngreso" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.Email">Email</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Clientes.Email" class="form-control" type="email" />
+                    <span asp-validation-for="Clientes.Email" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.Cupo">Cupo</label>
+                </div>
+                <div class="col-8">
+                    @*<input asp-for="Clientes.Cupo" class="form-control"  type="number"  min="1" max="5"/>*@
+                    <input asp-for="Clientes.Cupo" class="form-control"/>
+                    <span asp-validation-for="Clientes.Cupo" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.Plazo">Plazo</label>
+                </div>
+                <div class="col-8">
+                    @*<input asp-for="Clientes.Plazo" class="form-control"  type="number"  min="1" max="5"/>*@
+                    <input asp-for="Clientes.Plazo" class="form-control"  type="number" />
+                    <span asp-validation-for="Clientes.Plazo" class="text-danger"></span>
+                </div>
+            </div>
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.MarcaDeExtranjero ">Marca de Extranjero </label>
+                </div>
+                <div class="col-8">
+                    @*<input asp-for="Clientes.MarcaDeExtranjero " class="form-control"  type="number"  min="1" max="5"/>*@
+                    <input asp-for="Clientes.MarcaDeExtranjero " class="form-control"  type="checkbox" />
+                    <span asp-validation-for="Clientes.MarcaDeExtranjero " class="text-danger"></span>
+                </div>
+            </div>
+
+             <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.CiudadId">Ciudad</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Clientes.CiudadId, Model.ListaCiudad,
+                     "-Por favor seleccione Ciudad-", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.VendedorId">Vendedor</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Clientes.VendedorId, Model.ListaVendedor,
+                     "-Por favor seleccione Vendedor-", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Clientes.TipoGranContribuyenteId">TipoGranContribuyente</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Clientes.TipoGranContribuyenteId, Model.ListaTipoGranContribuyente,
+                     "-Por favor seleccione TipoGranContribuyente-", new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    <!-- Vista parcial reutilizada en distintos formularios para Volver -->
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<!-- UTILIDADES -->
+<!-- Acordeon -->
+<!--<button type="button" class="accordionple">Nombre de la seccion</button>
+<div class="panelaccordionple">
+    <br />-->
+<!-- La informacion o los objetos van AQUI -->
+<!--</div>-->
+
+<!-- --=====================================================-- -->

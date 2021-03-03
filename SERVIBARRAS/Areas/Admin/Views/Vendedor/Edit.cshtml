@@ -1,0 +1,59 @@
+<!-- Tabla Independiente => Vendedor-->
+
+@model SERVIBARRAS.Models.Vendedor
+@{
+    ViewData["Title"] = "Editar Vendedor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h3 class="text-center"> Editar vendedor</h3>
+<form method="post" asp-action="Edit"  id="formVendedor">
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="VendedorId" />
+        <div class="col-10 offset-1 mt-4">
+
+           <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="NombreVendedor">Nombre Vendedor</label>
+                </div>
+                <div class="col-8">
+                    <input id="IdNombreVendedor" asp-for="NombreVendedor" class="form-control" type="text" maxlength="400"/>
+                    <span asp-validation-for="NombreVendedor" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.VendedorId">Actualizar</button>
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver a lista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+
+
+<!-- UTILIDADES -->
+<!-- Acordeon -->
+<!--<button type="button" class="accordionple">Nombre de la seccion</button>
+<div class="panelaccordionple">
+    <br />-->
+<!-- La informacion o los objetos van AQUI -->
+<!--</div>-->
+
+
+<!-- --=====================================================-- -->

@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using SERVIBARRAS.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,17 +12,18 @@ namespace SERVIBARRAS.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
         public IndexModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
+        [Display(Name = "Email de usuario")]
         public string Username { get; set; }
 
         [TempData]
@@ -33,22 +35,33 @@ namespace SERVIBARRAS.Areas.Identity.Pages.Account.Manage
         public class InputModel
         {
             [Phone]
-            [Display(Name = "Phone number")]
+            [Display(Name = "Teléfono")]
             public string PhoneNumber { get; set; }
+           
+            public string Nombre { get; set; }
+            public string Direccion { get; set; }
+           
+            public string Ciudad { get; set; }
+            [Display(Name = "País")]
+            public string Pais { get; set; }
         }
 
-        private async Task LoadAsync(IdentityUser user)
-        {
-            var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+        //private async Task LoadAsync(ApplicationUser user)
+        //{
+        //    var userName = await _userManager.GetUserNameAsync(user);
+        //    var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-            Username = userName;
+        //    Username = userName;
 
-            Input = new InputModel
-            {
-                PhoneNumber = phoneNumber
-            };
-        }
+        //    Input = new InputModel
+        //    {
+        //        PhoneNumber = phoneNumber,
+        //        Nombre = user.Nombre,
+        //        Ciudad = user.Ciudad,
+        //        Direccion = user.Direccion,
+        //        Pais = user.Pais
+        //    };
+        //}
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -58,7 +71,21 @@ namespace SERVIBARRAS.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            await LoadAsync(user);
+            var userName = await _userManager.GetUserNameAsync(user);
+            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+
+            Username = userName;
+
+            Input = new InputModel
+            {
+                PhoneNumber = phoneNumber,
+                Nombre = user.Nombre,
+                Ciudad = user.Ciudad,
+                Direccion = user.Direccion,
+                Pais = user.Pais
+            };
+
+            //await LoadAsync(user);
             return Page();
         }
 
@@ -67,14 +94,14 @@ namespace SERVIBARRAS.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"No se pudo cargar el usuario con ID '{_userManager.GetUserId(User)}'.");
             }
 
-            if (!ModelState.IsValid)
-            {
-                await LoadAsync(user);
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    await LoadAsync(user);
+            //    return Page();
+            //}
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
@@ -82,13 +109,20 @@ namespace SERVIBARRAS.Areas.Identity.Pages.Account.Manage
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
                 if (!setPhoneResult.Succeeded)
                 {
-                    StatusMessage = "Unexpected error when trying to set phone number.";
-                    return RedirectToPage();
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    throw new InvalidOperationException($"Se produjo un error inesperado al configurar el número de teléfono para el usuario con ID '{userId}'.");
                 }
             }
 
+            user.Nombre = Input.Nombre;
+            user.PhoneNumber = Input.PhoneNumber;
+            user.Ciudad = Input.Ciudad;
+            user.Direccion = Input.Direccion;
+            user.Pais = Input.Pais;
+
+            await _userManager.UpdateAsync(user);
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Su perfil se ha actualizado correctamente";
             return RedirectToPage();
         }
     }
