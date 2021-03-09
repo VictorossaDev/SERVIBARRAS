@@ -11471,6 +11471,7 @@ a.text-dark:hover, a.text-dark:focus {
     .sidenav {
         padding-top: 15px;
     }
+
         .sidenav a {
             font-size: 18px;
         }
@@ -11485,15 +11486,20 @@ a.text-dark:hover, a.text-dark:focus {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 25px;
     transition: 0.4s;
     color: white;
 }
 
-    .active, .accordionple:hover {
-        background-color: #ccc;
-        color: black;
-    }
+.active {
+    background-color: white;
+    color: black;
+}
+
+.accordionple:hover {
+    background-color: gainsboro;
+    color: black;
+}
 
 .panelaccordionple {
     padding: 0 28px;
@@ -11503,6 +11509,122 @@ a.text-dark:hover, a.text-dark:focus {
     transition: max-height 0.2s ease-out;
 }
 
+/* Dropdown - Ple */
+
+/* Fixed sidenav, full height */
+.sidenav-ple {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+    /* Style the sidenav links and the dropdown button */
+    .sidenav-ple a-ple, .dropdown-btn-ple {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        color: white;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+
+        /* On mouse-over */
+        .sidenav-ple a-ple:hover, .dropdown-btn-ple:hover {
+            color: #f1f1f1;
+        }
+
+/* Main content */
+.main-ple {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active-ple {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container-ple {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down-ple {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav-ple {
+        padding-top: 15px;
+    }
+
+        .sidenav-ple a-ple {
+            font-size: 18px;
+        }
+}
+
+/*Dropdown*/
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
 
 /*!
  * PLE
